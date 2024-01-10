@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Home = (props) => {
-  const [message, setMessage] = useState('Hello World!');
+  const [message, setMessage] = useState('Hello Worlds!');
   return <h1>{message}</h1>;
 };
 
