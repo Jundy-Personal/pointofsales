@@ -1,0 +1,7 @@
+* {
+  @apply font-montserrat;
+}
+
+.ag-root-wrapper.ag-layout-normal {
+  @apply rounded-none;
+}
