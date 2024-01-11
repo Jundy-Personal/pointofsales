@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-const WarningButton = ({ children, size }) => {
+const WarningButton = ({ children, size, block = false }) => {
   const sizes = {
-    small: 'text-xs',
-    large: 'text-base',
+    small: 'py-2 text-xs',
+    large: 'py-3 text-base',
   };
 
   if (size && !sizes.hasOwnProperty(size)) {
@@ -13,14 +13,25 @@ const WarningButton = ({ children, size }) => {
   }
 
   const [buttonSize, setButtonSize] = useState(sizes.large);
+  const [blockDesign, setBlockDesign] = useState('');
 
   useEffect(() => {
-    setButtonSize(sizes[size]);
+    if (!size) {
+      setButtonSize(sizes.large);
+    } else {
+      setButtonSize(sizes[size]);
+    }
   }, [size]);
+
+  useEffect(() => {
+    if (block) {
+      setBlockDesign('block w-full');
+    }
+  }, [block]);
 
   return (
     <button
-      className={`py-2 px-4 bg-yellow-500 hover:bg-yellow-400 rounded-sm duration-300 text-white ${buttonSize}`}
+      className={`px-4 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:bg-yellow-600 bg-yellow-500 hover:bg-yellow-400 rounded-sm duration-300 text-white ${buttonSize} ${blockDesign}`}
     >
       {children}
     </button>
