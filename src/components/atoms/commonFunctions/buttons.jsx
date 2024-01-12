@@ -29,3 +29,7 @@ export const useButtonStyles = (size, block) => {
 
   return { buttonSize, blockDesign };
 };
+
+export const useCommonCss = () => {
+  return 'px-4 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 rounded-sm duration-300';
+};
