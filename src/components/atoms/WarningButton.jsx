@@ -6,7 +6,7 @@ const WarningButton = ({ children, size, block = false }) => {
 
   return (
     <button
-      className={`${commonCss} active:bg-yellow-600 bg-yellow-500 hover:bg-yellow-400  text-white ${buttonSize} ${blockDesign}`}
+      className={`${commonCss} active:bg-yellow-600 bg-yellow-500 hover:bg-yellow-400 text-white ${buttonSize} ${blockDesign}`}
     >
       {children}
     </button>

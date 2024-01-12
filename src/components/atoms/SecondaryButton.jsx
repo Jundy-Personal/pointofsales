@@ -6,7 +6,7 @@ const SecondaryButton = ({ children, size, block = false }) => {
 
   return (
     <button
-      className={`${commonCss} active:bg-gray-400 bg-secondary hover:bg-secondary-h  text-gray-800 ${buttonSize} ${blockDesign}`}
+      className={`${commonCss} active:bg-gray-400 bg-secondary hover:bg-secondary-h text-gray-800 ${buttonSize} ${blockDesign}`}
     >
       {children}
     </button>
