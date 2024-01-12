@@ -1,33 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useButtonStyles } from './commonFunctions/buttons';
 
 const PrimaryButton = ({ children, size, block = false }) => {
-  const sizes = {
-    small: 'py-2 text-xs',
-    large: 'py-3 text-base',
-  };
-
-  if (size && !sizes.hasOwnProperty(size)) {
-    return console.error(
-      `Property ${size} does not exist in the list of sizes.`
-    );
-  }
-
-  const [buttonSize, setButtonSize] = useState('');
-  const [blockDesign, setBlockDesign] = useState('');
-
-  useEffect(() => {
-    if (!size) {
-      setButtonSize(sizes.large);
-    } else {
-      setButtonSize(sizes[size]);
-    }
-  }, [size]);
-
-  useEffect(() => {
-    if (block) {
-      setBlockDesign('block w-full');
-    }
-  }, [block]);
+  const { buttonSize, blockDesign } = useButtonStyles(size, block);
 
   return (
     <button
