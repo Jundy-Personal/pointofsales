@@ -1,12 +1,12 @@
 import { useButtonStyles, useCommonCss } from './commonFunctions/buttons';
 
-const SecondaryButton = ({ children, size, block = false }) => {
-  const { buttonSize, blockDesign } = useButtonStyles(size, block);
-  const commonCss = useCommonCss();
+const SecondaryButton = ({ children, size, block = false, onClick, circle }) => {
+  const { buttonSize, blockDesign, circleCss } = useButtonStyles(size, block, circle);
 
   return (
     <button
-      className={`${commonCss} active:bg-gray-400 bg-secondary hover:bg-secondary-h text-gray-800 ${buttonSize} ${blockDesign}`}
+      onClick={onClick}
+      className={`${useCommonCss} ${circleCss} active:bg-gray-400 bg-secondary hover:bg-secondary-h text-gray-800 ${buttonSize} ${blockDesign}`}
     >
       {children}
     </button>
