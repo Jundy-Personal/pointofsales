@@ -5,3 +5,7 @@
 .ag-root-wrapper.ag-layout-normal {
   @apply rounded-none;
 }
+
+button:not(:only-child) {
+  @apply mx-1;
+}

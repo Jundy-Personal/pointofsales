@@ -14,6 +14,11 @@ export default {
         secondary: '#bed0db',
         'secondary-h': '#abbbc5',
       },
+      padding: {
+        3.25: '0.855rem',
+        2.65: '0.65rem',
+        2.75: '0.70rem',
+      },
     },
   },
   plugins: [],
